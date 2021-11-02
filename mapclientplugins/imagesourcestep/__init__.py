@@ -19,6 +19,9 @@ This file is part of MAP Client. (http://launchpad.net/mapclient)
 """
 __version__ = '0.2.0'
 __author__ = 'Hugh Sorby'
+__stepname__ 'Image Source'
+__location__ = ''
+
 
 from mapclientplugins.imagesourcestep import step
 
