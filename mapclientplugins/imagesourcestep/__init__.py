@@ -17,9 +17,9 @@ This file is part of MAP Client. (http://launchpad.net/mapclient)
     You should have received a copy of the GNU General Public License
     along with MAP Client.  If not, see <http://www.gnu.org/licenses/>..
 """
-__version__ = '0.2.0'
+__version__ = '0.2.1'
 __author__ = 'Hugh Sorby'
-__stepname__ 'Image Source'
+__stepname__ = 'Image Source'
 __location__ = 'https://github.com/mapclient-plugins/mapclientplugins.imagesourcestep'
 
 
