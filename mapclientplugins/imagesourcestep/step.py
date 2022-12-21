@@ -21,7 +21,7 @@ import os
 import re
 import imghdr
 
-from PySide2 import QtWidgets, QtGui
+from PySide6 import QtWidgets, QtGui
 
 from mapclient.mountpoints.workflowstep import WorkflowStepMountPoint
 from mapclientplugins.imagesourcestep.widgets.configuredialog import ConfigureDialog, ConfigureDialogState

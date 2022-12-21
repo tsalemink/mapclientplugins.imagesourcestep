@@ -20,7 +20,7 @@ This file is part of MAP Client. (http://launchpad.net/mapclient)
 """
 import json
 
-from PySide2.QtWidgets import QDialog, QFileDialog, QDialogButtonBox
+from PySide6.QtWidgets import QDialog, QFileDialog, QDialogButtonBox
 
 from mapclientplugins.imagesourcestep.widgets.ui_configuredialog import Ui_ConfigureDialog
 from mapclient.tools.pmr.pmrworkflowwidget import PMRWorkflowWidget
