@@ -19,7 +19,9 @@ This file is part of MAP Client. (http://launchpad.net/mapclient)
 """
 import os
 import re
-import imghdr
+
+import PIL
+from PIL import Image
 
 from PySide6 import QtWidgets, QtGui
 
@@ -68,12 +70,19 @@ class ImageSourceData(object):
         location = self._location
         if os.path.isdir(location):
             for item in sorted(os.listdir(location), key=alphanum_key):
-                image_candidate = os.path.join(location, item)
-                if imghdr.what(image_candidate):
-                    images.append(image_candidate)
-        elif os.path.exists(location):
-            if imghdr.what(location):
+                image_candidate = os.path.realpath(os.path.join(location, item))
+                if not os.path.isdir(image_candidate):
+                    try:
+                        Image.open(image_candidate).verify()
+                        images.append(image_candidate)
+                    except PIL.UnidentifiedImageError:
+                        pass
+        elif os.path.isfile(location):
+            try:
+                Image.open(location).verify()
                 images.append(location)
+            except PIL.UnidentifiedImageError:
+                pass
 
         return images
 
